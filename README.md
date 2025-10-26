@@ -10,9 +10,9 @@ This Python script uses computer vision techniques to count vehicles in a traffi
 
 - **Object Detection:** Utilizes the YOLO model to detect vehicles in the video.
 
-- **Tracking:** Implements the SORT algorithm for real-time tracking of detected vehicles.
+- **Tracking:** Implements the SORT algorithm and Kalman Filters for real-time tracking of detected vehicles.
 
-- **Counting:** Tracks and counts vehicles crossing predefined lines in the video.
+- **Counting:** Tracks and counts vehicles crossing predefined lines in the video frames and save results as results.mp4.
 
 - **Visualization:** Displays the output with graphical overlays indicating the total count and count in specific directions.
 
@@ -20,6 +20,7 @@ This Python script uses computer vision techniques to count vehicles in a traffi
 ## 🛠️ Prerequisites
 
 Make sure you have the following dependencies installed:
+- Python 3.10.11
 
 - [Ultralytics YOLO](https://github.com/ultralytics/yolov5)
 
@@ -34,9 +35,20 @@ Make sure you have the following dependencies installed:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/serialdotai/car-counter.git
+   git clone https://github.com/MichaelWaruiru/car-counter.git
    cd car-counter
    ```
+
+2. **Create and activate a virtual environment**
+
+    ```bash
+    python -m venv yoloenv
+    # Activate it
+    # Windows:
+    yoloenv\Scripts\activate
+    # macOS/Linux:
+    source yoloenv/bin/activate
+    ```
 
 2. **Install the required packages:**
     ```bash
@@ -44,7 +56,7 @@ Make sure you have the following dependencies installed:
     ```
 
 3. **Download the YOLO weights file `yolov8l.pt` and place it in a yolo weights directory.**
-
+   ⚠️ Note: When you run python main.py, the yolo8l.pt downloads automatically
 
 4. **Run the script:**
     ```bash
